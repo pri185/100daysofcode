@@ -1,0 +1,13 @@
+Given an integer array nums containing distinct positive integers, find and return any number from the array that is neither the minimum nor the maximum value in the array, or -1 if there is no such number.
+[leetcode]
+class Solution {
+public:
+    int findNonMinOrMax(vector<int>& nums) {
+        int mx = *max_element(nums.begin(),nums.end());
+        int mn = *min_element(nums.begin(),nums.end());
+        for(auto num: nums){
+            if(num!=mx && num!=mn) return num;
+        }
+        return -1;
+    }
+};
