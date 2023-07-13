@@ -9,3 +9,20 @@ public:
         str1.substr(0, gcd(size(str1),size(str2))): "";
     }
 };
+
+(P/2)
+Given a string s consisting of words and spaces, return the length of the last word in the string.
+
+class Solution {
+public:
+    int lengthOfLastWord(string s) { 
+        int len = 0, lastword = s.length() - 1;
+        while (lastword >= 0 && s[lastword] == ' ') 
+        lastword--;
+        while (lastword >= 0 && s[lastword] != ' ') {
+            len++;
+            lastword--;
+        }
+        return len;
+    }
+};
