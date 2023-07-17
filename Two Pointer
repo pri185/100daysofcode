@@ -166,3 +166,34 @@ public:
         return Palindrome(temp);
     }
 };
+
+P/7)
+Given a string s, reverse only all the vowels in the string and return it.
+
+The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.
+
+class Solution {
+public:
+    bool isVovel(char ch)
+    {
+        return ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U';
+    }
+    string reverseVowels(string s) {
+        
+        int i=0;    
+        int j=s.length()-1;
+        while(i<j)
+        {
+            if(isVovel(s[i])&&isVovel(s[j]))
+            {
+                swap(s[i++],s[j--]);
+            }
+            else if(isVovel(s[i])) j--;
+            else if(isVovel(s[j])) i++;
+            else{
+                j--; i++;
+            } 
+        }
+        return s;
+    }
+};
