@@ -181,3 +181,34 @@ public:
     }
 };
 
+Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.
+
+Note: You must not use any built-in BigInteger library or convert the inputs to integer directly.
+class Solution {
+public:
+    string multiply(string num1, string num2) {
+
+        if(num1=="0"||num2=="0")
+            return "0";
+
+        int carry=0;
+        string product;
+        int n1=num1.size()-1, n2=num2.size()-1;
+
+        for(int i=0; i<=n1+n2 || carry; i++){
+
+            for(int j=max(0,i-n2); j<=min(i,n1); j++){
+                carry+=((num1[n1-j]-'0')*(num2[n2-i+j]-'0'));
+            }
+
+            product+=carry%10+'0';
+            carry/=10;
+        }
+
+        reverse(begin(product),end(product));
+        return product;
+
+    }
+};
+ 
+
