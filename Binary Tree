@@ -2,4 +2,28 @@ Given an integer array nums where the elements are sorted in ascending order, co
 height-balanced
  binary search tree.
 
+
+
  
+Class Solution {
+public:
+ TreeNode add(vector<int>v, int low, int high)
+if(lower<=high){
+
+int mid-(low high)/2;
+
+TreeNode *n1-new TreeNode(v[mid]);
+
+n1->left-add(v, low, mid-1);
+
+n1->right add(v,mid+1,high);
+
+return n1;
+
+return NULL;
+
+TreeNode sortedArrayToBST (vector<int>& nums) {
+
+return add(nums,,nums.size()-1);
+}
+};
