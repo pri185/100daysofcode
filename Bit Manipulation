@@ -23,3 +23,23 @@ public:
     	return result;
 	}
 };
+
+
+Given two binary strings a and b, return their sum as a binary string.
+
+Example 1:
+
+Input: a = "11", b = "1"
+Output: "100"
+
+class Solution {
+public:
+
+string addBinary(string a, string b) { string result
+
+int carry 0; int i.size() 1. Jb.size()-1; while (10|j6|| carry) ( int sum carry: if (10) ( 10 11 13- 14 15 sum bjl '0'; 18 19 21 22
+
+sum a[i]-'0' if (j == 0) {
+
+carry sum/2; result to string(sum 2);
+reverse(result.begin(), result.end()); return result;
