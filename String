@@ -258,3 +258,26 @@ else
 return false;
 }
 return i= ransomNote.size();
+
+
+Given a string s, find the length of the longest 
+substring
+ without repeating characters.
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+    string str;
+    int maxi=0;
+    for(int i=0;i<s.size();i++){
+        str.push_back(s[i]);
+        if(count(str.begin(),str.end(),s[i])==1){
+            int n=str.size();
+            maxi=max(maxi,n);
+        }
+        else{
+            str.erase(0,str.find(s[i])+1);
+        }
+    }
+    return maxi;
+    }
+};
